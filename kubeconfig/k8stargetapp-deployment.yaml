@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: k8stargetapp
-          image: targetapp:0.0.2-SNAPSHOT
+          image: corujlo/targetapp:0.0.2-SNAPSHOT
           ports:
             - containerPort: 8080
