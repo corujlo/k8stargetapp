@@ -1,0 +1,18 @@
+management:
+  endpoint:
+    restart.enabled : true
+    health.enabled : true
+    info.enabled : true
+spring:
+  application:
+    name: k8stargetapp
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        sources:
+          - namespace: default
+            name: k8stargetapp-config-map
+      reload:
+        period: 1000
+        enabled: true

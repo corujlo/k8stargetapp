@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8stargetapp-deployment
+  labels:
+    app: k8stargetapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8stargetapp
+  template:
+    metadata:
+      labels:
+        app: k8stargetapp
+    spec:
+      containers:
+        - name: k8stargetapp
+          image: targetapp:0.0.2-SNAPSHOT
+          ports:
+            - containerPort: 8080
